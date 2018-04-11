@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="350.0" prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
+      <top>
+         <!--suppress JavaFxDefaultTag -->
+         <HBox prefHeight="16.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets bottom="3.0" left="10.0" right="3.0" top="5.0" />
+                  </HBox.margin>
+               </Text>
+               <TextField fx:id="addPlayerNameField" onKeyPressed="#addPlayerEnter">
+                  <HBox.margin>
+                     <Insets bottom="3.0" left="3.0" right="3.0" top="5.0" />
+                  </HBox.margin>
+               </TextField>
+               <Button mnemonicParsing="false" onAction="#addPlayerClick" text="Add Player">
+                  <HBox.margin>
+                     <Insets bottom="3.0" left="3.0" right="3.0" top="5.0" />
+                  </HBox.margin>
+               </Button>
+               <Button layoutX="223.0" layoutY="15.0" mnemonicParsing="false" onAction="#startButtonClick" text="Start">
+                  <HBox.margin>
+                     <Insets bottom="3.0" left="3.0" right="3.0" top="5.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+         </HBox>
+      </top>
+      <left>
+         <VBox id="playerNameContainer" fx:id="nameColumn" prefWidth="180.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <opaqueInsets>
+               <Insets left="5.0" />
+            </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding></VBox>
+      </left>
+      <center>
+         <VBox id="optionsContainer" fx:id="controlColumn" spacing="5.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding></VBox>
+      </center>
+</BorderPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+      <VBox fx:id="rightControlPanel" prefHeight="300.0" prefWidth="150.0" BorderPane.alignment="CENTER_LEFT">
+         <padding>
+            <Insets left="8.0" top="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <left>
+      <VBox fx:id="leftControlPanel" prefHeight="300.0" prefWidth="150.0" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="90.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="leftPlayerArea" prefHeight="200.0" prefWidth="150.0">
+               <padding>
+                  <Insets right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="rightPlayerArea" prefHeight="200.0" prefWidth="150.0">
+               <padding>
+                  <Insets left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox fx:id="scoreArea" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_LEFT" />
+   </bottom>
+</BorderPane>

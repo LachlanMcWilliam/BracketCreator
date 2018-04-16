@@ -1,18 +1,26 @@
 package Application;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 
-public class Controller{
+public class StartScreenController {
 
     @FXML
     private VBox controlColumn;
@@ -31,13 +39,11 @@ public class Controller{
 
 
     /**
-     *
      * ADD PLAYERS CONTROLS
-     *
      **/
 
     public void addPlayerEnter(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.ENTER){
+        if (keyEvent.getCode() == KeyCode.ENTER) {
             addPlayer(idCounter);
             addDeleteButton(idCounter);
 
@@ -78,7 +84,7 @@ public class Controller{
         deleteButton.setId(String.valueOf(Id));
         deleteButton.setText("Delete");
         deleteButton.setOnAction(event -> {
-            String buttonId = ((Control)event.getSource()).getId();
+            String buttonId = ((Control) event.getSource()).getId();
             deletePlayer(Integer.valueOf(buttonId));
         });
 
@@ -108,14 +114,21 @@ public class Controller{
     }
 
 
-
     /**
-     *
      * START BUTTON CONTROLS
-     *
      */
+    public void startButtonClick(ActionEvent event) throws IOException {
 
-    public void startButtonClick() {
-        System.out.println(storageController.toString());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sceneFiles/mainTournament.fxml"));
+
+        Parent tournamentViewParent = loader.load();
+        Scene tournamentScene = new Scene(tournamentViewParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tournamentScene);
+        window.show();
+
+        TournamentController tournamentController = loader.getController();
+
+        tournamentController.setPlayersStorage(storageController);
     }
 }
